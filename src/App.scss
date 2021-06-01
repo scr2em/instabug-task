@@ -1,0 +1,83 @@
+@import "./sassRoot/variables/variables";
+
+// low level classes
+.grid {
+  display: grid;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.place-center {
+  place-items: center;
+}
+.h-full {
+  height: 100vh;
+}
+.w-full {
+  width: 100%;
+}
+.main-color {
+  color: $main-color;
+}
+.body-text-1 {
+  color: $bodyText1;
+}
+.center {
+  text-align: center;
+}
+
+.text-size-1 {
+  font-size: 1rem;
+}
+.text-size-2 {
+  font-size: 1.25rem;
+}
+.text-size-3 {
+  font-size: 1.5rem;
+}
+.text-size-4 {
+  font-size: 1.75rem;
+}
+.text-size-4 {
+  font-size: 2rem;
+}
+
+// error page
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+
+  .error-header {
+    color: $main-color;
+  }
+
+  .error-message {
+    color: $bodyText1;
+    font-size: 1.25rem;
+  }
+
+  img {
+    height: 200px;
+  }
+
+  @media (min-width: $sm) {
+    img {
+      height: 300px;
+    }
+  }
+  @media (min-width: $lg) {
+    img {
+      height: 400px;
+    }
+  }
+}

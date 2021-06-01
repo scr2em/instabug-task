@@ -1,25 +1,84 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import useAuth from "./hooks/useAuth";
+import ErrorPage from "./pages/errorPage/404.js";
+import LoginPage from "./pages/login/login.js";
+import WelcomePage from "./pages/welcome/welcome.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        // For authenticated users
+        <PrivateRoute exact path="/">
+          <WelcomePage />
+        </PrivateRoute>
+        // Not for authenticated users
+        <NotForAuthenticated path="/login">
+          <LoginPage />
+        </NotForAuthenticated>
+        // Public
+        <Route path="/404">
+          <ErrorPage />
+        </Route>
+        <Route path="*">
+          <Redirect to="/404" />
+        </Route>
+      </Switch>
+      {/* </div> */}
+    </Router>
   );
 }
 
 export default App;
+
+function PrivateRoute({ children, ...rest }) {
+  const email = useSelector((state) => state.email);
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        email ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
+  );
+}
+
+function NotForAuthenticated({ children, ...rest }) {
+  const email = useSelector((state) => state.email);
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        email ? (
+          <Redirect
+            to={{
+              pathname: "/",
+              state: { from: location },
+            }}
+          />
+        ) : (
+          children
+        )
+      }
+    />
+  );
+}

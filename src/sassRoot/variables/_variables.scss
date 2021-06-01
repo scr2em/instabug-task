@@ -1,0 +1,13 @@
+$main-color: #00287a;
+$bodyText1: #7f93bc;
+
+@media (max-width: 768px) {
+  .header .navbar .navbar-ul {
+    display: none;
+  }
+}
+
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
