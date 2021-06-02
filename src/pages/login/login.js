@@ -1,37 +1,52 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import useAuth from "../../hooks/useAuth";
+import React from "react";
+import Slider from "../../components/Slider";
+import LoginForm from "../../components/LoginForm";
+
+const imagesName = [
+  "Product-overview.svg",
+  "Products-bug-reporting.svg",
+  "Products-crash-reporting.svg",
+];
 
 export default function Login() {
-  const { login } = useAuth();
-
-  useEffect(() => {
-    document.title = "Login";
-  }, []);
-
   return (
-    <form>
-      <div style={{ padding: 20 }}>
-        <label htmlFor="email" style={{ display: "block" }}>
-          email
-        </label>
-        <input type="email" id="email" />
-
-        <label htmlFor="password" style={{ display: "block" }}>
-          password
-        </label>
-        <input type="password" id="password" />
-
-        <label htmlFor="rememberMe" style={{ display: "block" }}>
-          remember me
-        </label>
-        <input type="checkbox" id="rememberMe" />
-
-        <button style={{ display: "block" }}>submit</button>
+    <div className="login-page-container">
+      <div className="left-side">
+        <Slider imagesName={imagesName} />
       </div>
-    </form>
-    // <div>
-    //   login page
-    //   <button onClick={() => login("mohamed@gmail.com")}>login</button>
-    // </div>
+
+      <div className="right-side">
+        <div className="body">
+          <img src="/images/Instabug-icon.svg" alt="logo" />
+
+          <h1>Log in to Instabug</h1>
+          <button className="social-button google">
+            <div className="icon">
+              <img src="/images/socialIcons/google-color.svg" height="38" />
+            </div>
+            Google
+          </button>
+          <button className="social-button github">GitHub</button>
+          <button className="social-button microsoft">Microsoft</button>
+
+          <div className="divider"></div>
+
+          <LoginForm />
+
+          <div className="row">
+            <div>
+              Don't have an account?{" "}
+              <span className="highlighted">Sign up</span>
+            </div>
+            <span className="highlighted"> Login via SSO</span>
+          </div>
+
+          <p className="muted">Trusted by the top companies</p>
+        </div>
+      </div>
+    </div>
   );
 }

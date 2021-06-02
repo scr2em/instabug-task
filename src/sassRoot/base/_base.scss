@@ -32,6 +32,9 @@ pre {
 a {
   background-color: transparent;
 }
+label {
+  display: block;
+}
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
@@ -65,8 +68,6 @@ sup {
 }
 img {
   border-style: none;
-  height: auto;
-  width: 100%;
 }
 button,
 input,

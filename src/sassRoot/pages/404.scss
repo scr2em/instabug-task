@@ -1,0 +1,28 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  .error-header {
+    color: $main-color;
+  }
+  .error-message {
+    color: $bodyText1;
+    font-size: 1.25rem;
+  }
+  img {
+    height: 200px;
+  }
+  @media (min-width: $sm) {
+    img {
+      height: 300px;
+    }
+  }
+  @media (min-width: $lg) {
+    img {
+      height: 400px;
+    }
+  }
+}

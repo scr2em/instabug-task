@@ -1,0 +1,22 @@
+.slider {
+  text-align: center;
+  h1 {
+    color: white;
+    font-weight: 400;
+  }
+  .dots {
+    display: inline-flex;
+    list-style: none;
+    li {
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      border: 2px solid white;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .active {
+      background-color: white;
+    }
+  }
+}
