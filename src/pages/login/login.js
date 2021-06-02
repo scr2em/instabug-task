@@ -29,8 +29,18 @@ export default function Login() {
             </div>
             Google
           </button>
-          <button className="social-button github">GitHub</button>
-          <button className="social-button microsoft">Microsoft</button>
+          <button className="social-button github">
+            <div className="icon">
+              <img src="/images/socialIcons/github.svg" height="38" />
+            </div>
+            GitHub
+          </button>
+          <button className="social-button microsoft">
+            <div className="icon">
+              <img src="/images/socialIcons/microsoft.svg" height="38" />
+            </div>
+            Microsoft
+          </button>
 
           <div className="divider"></div>
 
@@ -45,6 +55,21 @@ export default function Login() {
           </div>
 
           <p className="muted">Trusted by the top companies</p>
+
+          <ul className="partners">
+            <li>
+              <img src="/images/partners/buzzfeed.png" />
+            </li>
+            <li>
+              <img src="/images/partners/asana-logo.png" />
+            </li>
+            <li>
+              <img src="/images/partners/OnePlus_logo.svg" />
+            </li>
+            <li>
+              <img src="/images/partners/houseparty.png" />
+            </li>
+          </ul>
         </div>
       </div>
     </div>

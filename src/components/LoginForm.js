@@ -39,6 +39,8 @@ export default function LoginForm() {
     document.title = "Login";
   }, []);
 
+  let emailError = formik.touched.email && formik.errors.email;
+  let passwordError = formik.touched.password && formik.errors.password;
   return (
     <form onSubmit={formik.handleSubmit}>
       {error && (
@@ -54,10 +56,9 @@ export default function LoginForm() {
         value={formik.values.email}
         onChange={formik.handleChange}
         placeholder="you@company.com"
+        className={emailError ? "invalidInput" : ""}
       />
-      {formik.touched.email && formik.errors.email && (
-        <div className="error">{formik.errors.email}</div>
-      )}
+      {emailError && <div className="error">{formik.errors.email}</div>}
       <div className="row">
         <label htmlFor="password">Password</label>
         <span className="muted">Forgot password?</span>
@@ -69,10 +70,9 @@ export default function LoginForm() {
         value={formik.values.password}
         onChange={formik.handleChange}
         placeholder="6+ characters"
+        className={passwordError ? "invalidInput" : ""}
       />
-      {formik.touched.password && formik.errors.password && (
-        <div className="error">{formik.errors.password}</div>
-      )}
+      {passwordError && <div className="error">{formik.errors.password}</div>}
       <button className="main-button" type="submit">
         Log in
       </button>

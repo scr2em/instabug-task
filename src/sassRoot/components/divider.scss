@@ -1,0 +1,16 @@
+.divider {
+  margin: 20px 0;
+  font-weight: 700;
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background-color: #dcdee3;
+  &::before {
+    content: "OR";
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    color: #445168;
+  }
+}

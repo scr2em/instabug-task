@@ -6,39 +6,6 @@
 
 //login page
 
-.alert {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 8px 10px;
-  margin: 5px 0;
-  color: #4c566a;
-  text-align: left;
-  border-radius: $border-radius;
-  font-size: 1.1rem;
-  font-weight: 400;
-  &.alert-danger {
-    background-color: #fce6e2;
-    border: 1px solid #cfbdba;
-  }
-}
-
-.divider {
-  margin: 20px 0;
-  font-weight: 700;
-  position: relative;
-  height: 1px;
-  width: 100%;
-  background-color: #dcdee3;
-  &::before {
-    content: "OR";
-    background-color: white;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    color: #445168;
-  }
-}
-
 input {
   width: 100%;
   box-shadow: 0px 0px 2px 0px #cccccc;
@@ -52,7 +19,8 @@ input::placeholder {
   color: #cccccc;
 }
 
-input:invalid {
+input:invalid,
+.invalidInput {
   border: 1px solid red;
 }
 label {
@@ -73,27 +41,6 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-}
-
-.main-button {
-  width: 100%;
-  text-align: center;
-  background-color: $main-color;
-  box-shadow: 0px 0px 2px 0px $main-color;
-  color: white;
-  height: 40px;
-  border-radius: $border-radius;
-  margin: 20px 0;
-  cursor: pointer;
-  &:hover {
-    background-color: #0a44b8;
-  }
-}
-
-.main-button:disabled {
-  background-color: #cccccc;
-  color: white;
-  box-shadow: 0px 0px 2px 0px #cccccc;
 }
 
 .highlighted {

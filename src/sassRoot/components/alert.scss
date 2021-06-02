@@ -1,0 +1,15 @@
+.alert {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 10px;
+  margin: 5px 0;
+  color: #4c566a;
+  text-align: left;
+  border-radius: $border-radius;
+  font-size: 1.1rem;
+  font-weight: 400;
+  &.alert-danger {
+    background-color: #fce6e2;
+    border: 1px solid #cfbdba;
+  }
+}
