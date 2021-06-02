@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "./Slider.scss";
 export default function Slider({ imagesName }) {
   const [slide, setSlide] = useState(0);
   const [images, setImages] = useState(imagesName);

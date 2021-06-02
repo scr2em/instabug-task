@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 import useAuth from "../../hooks/useAuth";
 import React from "react";
-import Slider from "../../components/Slider";
-import LoginForm from "../../components/LoginForm";
-
+import Slider from "../../components/slider/index";
+import LoginForm from "../../components/loginForm/index";
+import Divider from "../../components/divider/index";
+import "./login.scss";
 const imagesName = [
   "Product-overview.svg",
   "Products-bug-reporting.svg",
@@ -42,7 +43,7 @@ export default function Login() {
             Microsoft
           </button>
 
-          <div className="divider"></div>
+          <Divider />
 
           <LoginForm />
 

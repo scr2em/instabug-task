@@ -10,9 +10,9 @@ import {
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import useAuth from "./hooks/useAuth";
-import ErrorPage from "./pages/errorPage/404.js";
-import LoginPage from "./pages/login/login.js";
-import WelcomePage from "./pages/welcome/welcome.js";
+import ErrorPage from "./pages/errorPage/index.js";
+import LoginPage from "./pages/login/index.js";
+import WelcomePage from "./pages/welcome/index.js";
 
 function App() {
   return (

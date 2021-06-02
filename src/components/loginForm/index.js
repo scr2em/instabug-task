@@ -1,8 +1,9 @@
 import { useFormik } from "formik";
 import * as yup from "yup";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 import { useEffect, useState } from "react";
-
+import Alert from "../alert/index";
+import "./LoginForm.scss";
 export default function LoginForm() {
   const { login, error } = useAuth();
   const formik = useFormik({
@@ -44,9 +45,7 @@ export default function LoginForm() {
   let passwordError = formik.touched.password && formik.errors.password;
   return (
     <form onSubmit={formik.handleSubmit}>
-      {error && (
-        <div className="alert alert-danger">Incorrect email or password</div>
-      )}
+      {error && <Alert text="Incorrect email or password" />}
       <label htmlFor="email" className="">
         Email
       </label>

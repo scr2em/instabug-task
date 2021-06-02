@@ -1,0 +1,157 @@
+@import "../../App.scss";
+
+.login-page-container {
+  display: flex;
+  height: 100vh;
+  .right-side {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    width: 100%;
+    .body {
+      width: 450px;
+      text-align: center;
+
+      h1 {
+        color: #425067;
+        font-weight: 500;
+      }
+    }
+  }
+  .left-side {
+    background-color: $main-color;
+    display: none;
+    place-items: center;
+  }
+  @media (min-width: $lg) {
+    .left-side {
+      display: grid;
+      width: 50%;
+    }
+    .right-side {
+      width: 50%;
+    }
+  }
+}
+
+.social-button {
+  width: 100%;
+  border-radius: $border-radius;
+  color: white;
+  height: 40px;
+  font-weight: 600;
+  margin: 5px 0;
+  position: relative;
+  .icon {
+    top: 3px;
+    left: 3px;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  border: none;
+  cursor: pointer;
+  &.google {
+    background-color: #2d84fc;
+    color: white;
+    box-shadow: 0px 0px 2px 0px #2d84fc;
+    &:hover {
+      background-color: #006aff;
+    }
+  }
+  &.github {
+    background-color: #333333;
+    color: white;
+    box-shadow: 0px 0px 2px 0px #333333;
+    &:hover {
+      background-color: #1b1b1b;
+    }
+  }
+  &.microsoft {
+    background-color: white;
+    color: #333333;
+    box-shadow: 0px 0px 2px 0px #333333;
+    &:hover {
+      background-color: rgb(243, 243, 243);
+    }
+  }
+}
+
+input {
+  width: 100%;
+  box-shadow: 0px 0px 2px 0px #cccccc;
+  border: none;
+  height: 40px;
+  padding: 0 15px;
+  margin: 5px 0;
+}
+
+input::placeholder {
+  color: #cccccc;
+}
+
+input:invalid,
+.invalidInput {
+  border: 1px solid red;
+}
+label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  color: #515e73;
+}
+
+.muted {
+  color: #b4b4b4;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.highlighted {
+  color: #0099ff;
+  font-weight: 500;
+}
+
+.error {
+  color: red;
+  text-align: left;
+}
+
+.partners {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 30px;
+  padding: 0;
+  gap: 10px;
+  li {
+    color: black;
+    place-self: center;
+    img {
+      width: 100%;
+      height: auto;
+      filter: grayscale(1);
+      opacity: 0.5;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        filter: grayscale(0);
+        opacity: 1;
+      }
+    }
+  }
+}
