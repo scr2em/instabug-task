@@ -4,14 +4,14 @@ import { LOGIN, LOGOUT } from "../redux/actions";
 
 //fake db
 const users = [
-  { email: "mohamed@instabug.com", password: "12345678A" },
-  { email: "mohamed1@instabug.com", password: "12345678" },
-  { email: "mohamed2@instabug.com", password: "12345678" },
-  { email: "mohamed3@instabug.com", password: "12345678" },
-  { email: "mohamed4@instabug.com", password: "12345678" },
-  { email: "mohamed5@instabug.com", password: "12345678" },
-  { email: "mohamed6@instabug.com", password: "12345678" },
-  { email: "mohamed7@instabug.com", password: "12345678" },
+  { email: "mohamed0@instabug.com", password: "12345678A" },
+  { email: "mohamed1@instabug.com", password: "12345678A" },
+  { email: "mohamed2@instabug.com", password: "12345678A" },
+  { email: "mohamed3@instabug.com", password: "12345678A" },
+  { email: "mohamed4@instabug.com", password: "12345678A" },
+  { email: "mohamed5@instabug.com", password: "12345678A" },
+  { email: "mohamed6@instabug.com", password: "12345678A" },
+  { email: "mohamed7@instabug.com", password: "12345678A" },
 ];
 
 export default function useAuth() {
