@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export default function LoginForm() {
   const { login, error } = useAuth();
   const formik = useFormik({
+    validateOnChange: true,
     initialValues: {
       email: "",
       password: "",
@@ -53,8 +54,7 @@ export default function LoginForm() {
         type="email"
         id="email"
         name="email"
-        value={formik.values.email}
-        onChange={formik.handleChange}
+        {...formik.getFieldProps("email")}
         placeholder="you@company.com"
         className={emailError ? "invalidInput" : ""}
       />
@@ -67,13 +67,16 @@ export default function LoginForm() {
         type="password"
         id="password"
         name="password"
-        value={formik.values.password}
-        onChange={formik.handleChange}
         placeholder="6+ characters"
         className={passwordError ? "invalidInput" : ""}
+        {...formik.getFieldProps("password")}
       />
       {passwordError && <div className="error">{formik.errors.password}</div>}
-      <button className="main-button" type="submit">
+      <button
+        className="main-button"
+        type="submit"
+        disabled={emailError || passwordError}
+      >
         Log in
       </button>
     </form>

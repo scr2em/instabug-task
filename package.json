@@ -6,7 +6,9 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "cypress": "^7.4.0",
     "formik": "^2.2.8",
+    "gh-pages": "^3.2.0",
     "jsonwebtoken": "^8.5.1",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
@@ -19,6 +21,9 @@
     "yup": "^0.32.9"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "cypress:open": "cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
